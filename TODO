@@ -1,0 +1,63 @@
+1. Configuração Inicial:
+  ✔ Instalar Node.js e npm (se ainda não estiver) @done(25-05-02 02:09)
+  ✔ Criar projeto com Vite: npm create vite@latest @done(25-05-02 02:09)
+  ✔ Instalar dependências: npm install @done(25-05-02 02:09)
+  ✔ Configurar ESLint e Prettier (opcional, mas recomendado) @done(25-05-02 02:45)
+  ✔ Instalar React Router DOM para navegação @done(25-05-02 02:46)
+  ✔ Criar estrutura básica de pastas (components, pages, services, etc) @done(25-05-02 02:48)
+  ✔ Configurar Tailwind @done(25-05-02 02:50)
+
+2. Frontend — Design e Layout:
+  ☐ Criar o layout principal (Header, Footer, Navbar)
+  ☐ Implementar página Home
+  
+  Criar páginas:
+    ☐ Login / Registo
+    ☐ Perfil de utilizador
+    ☐ Lista de aulas / agendamentos
+    ☐ Dashboard do funcionário/admin (ex: criar aulas, ver membros)
+    ☐ Estilizar com Tailwind CSS ou outra biblioteca (Bootstrap, etc)
+    ☐ Responsividade (funcionar bem em mobile)
+
+3. Autenticação:
+  ☐ Criar formulários de Login e Registo
+  ☐ Ligar ao backend (ou usar mock temporário)
+  ☐ Guardar token JWT localmente (localStorage)
+  ☐ Criar Contexto de Autenticação (AuthContext)
+  ☐ Proteger rotas com PrivateRoute
+
+4. Integração com API (Backend):
+  ☐ Criar ficheiro api.js com Axios
+
+  Fazer chamadas para endpoints:
+    ☐ Login / Logout / Registo
+    ☐ Obter aulas disponíveis
+    ☐ Agendar aula
+    ☐ Ver perfil do utilizador
+    ☐ Testar erros e mensagens (ex: login errado)
+
+5. Backend + Base de Dados (Fase posterior, se aplicável):
+  ☐ Criar backend com Express ou Django
+  ☐ Ligar base de dados (PostgreSQL ou MongoDB)
+  ☐ Criar modelos (User, Aula, Plano, etc.)
+  ☐ Criar API REST (Login, Aulas, Agendamento)
+  ☐ Validar inputs e proteger endpoints
+
+6. Funcionalidades Extra:
+  ☐ Upload de imagem de perfil
+  ☐ Integração com sistema de pagamentos (ex: Stripe)
+  ☐ Envio de e-mails de confirmação
+  ☐ Calendário de aulas com visualização por dia/semana
+  ☐ Notificações ou lembretes de aula
+
+7. Deploy:
+  ☐ Fazer deploy do frontend (Vercel, Netlify, etc)
+  ☐ Fazer deploy do backend (Render, Railway, etc)
+  ☐ Configurar domínio personalizado (opcional)
+  ☐ Usar variáveis de ambiente (.env) no deploy
+
+8. Testes e Otimizações:
+  ☐ Testar navegação e funcionalidades principais
+  ☐ Verificar compatibilidade em diferentes dispositivos
+  ☐ Corrigir bugs e mensagens de erro
+  ☐ Otimizar performance e imagens
