@@ -35,7 +35,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              to="/userForm"
+              to="/register"
               className="text-white transition-colors duration-200 hover:text-gray-300"
             >
               JOIN NOW

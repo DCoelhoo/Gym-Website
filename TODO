@@ -8,55 +8,48 @@
   ✔ Configurar Tailwind @done(25-05-02 02:50)
 
 2. Frontend — Design e Layout:
-  ☐ Criar o layout principal (Header, Footer, Navbar)
-  ☐ Implementar página Home @started(25-05-02 12:12)
+  ✔ Criar o layout principal (Header, Footer, Navbar) @done(25-05-04 13:15)
+  ✔ Implementar página Home @started(25-05-02 12:12) @done(25-05-04 13:15) @lasted(2d1h3m44s)
   
   Criar páginas:
-    ☐ Login / Registo
+    ✔ Login / Registo @done(25-05-04 14:11)
     ☐ Perfil de utilizador
     ☐ Lista de aulas / agendamentos
     ☐ Dashboard do funcionário/admin (ex: criar aulas, ver membros)
-    ☐ Estilizar com Tailwind CSS ou outra biblioteca (Bootstrap, etc)
+    ✔ Estilizar com Tailwind CSS ou outra biblioteca (Bootstrap, etc) @done(25-05-04 14:13)
     ☐ Responsividade (funcionar bem em mobile)
 
 3. Autenticação:
-  ☐ Criar formulários de Login e Registo
-  ☐ Ligar ao backend (ou usar mock temporário)
+  ✔ Criar formulários de Login e Registo @done(25-05-04 15:40)
+  ✔ Ligar ao backend (Supabase) @done(25-05-04 15:40)
   ☐ Guardar token JWT localmente (localStorage)
-  ☐ Criar Contexto de Autenticação (AuthContext)
+  ☐ Criar Contexto de Autenticação (AuthContext) @started(25-05-04 15:41)
   ☐ Proteger rotas com PrivateRoute
 
-4. Integração com API (Backend):
-  ☐ Criar ficheiro api.js com Axios
-
   Fazer chamadas para endpoints:
-    ☐ Login / Logout / Registo
+    ☐ Login / Logout / Registo @started(25-05-04 15:40)
     ☐ Obter aulas disponíveis
     ☐ Agendar aula
     ☐ Ver perfil do utilizador
     ☐ Testar erros e mensagens (ex: login errado)
+  
+4. Criar Tabelas no Supabase:
+  ✔ Usar tabela de auth.users do Supabase @done(25-05-04 15:45)
+  ☐ Criar tabela de utilizadores
+  ☐ Criar tabela de aulas
+  ☐ Criar tabela de agendamentos
+  ☐ Criar tabela de pagamentos
+  ☐ Criar tabela de Ginásios
+  
 
-5. Backend + Base de Dados (Fase posterior, se aplicável):
-  ☐ Criar backend com Express ou Django
-  ☐ Ligar base de dados (PostgreSQL ou MongoDB)
-  ☐ Criar modelos (User, Aula, Plano, etc.)
-  ☐ Criar API REST (Login, Aulas, Agendamento)
-  ☐ Validar inputs e proteger endpoints
-
-6. Funcionalidades Extra:
+5. Funcionalidades Extra:
   ☐ Upload de imagem de perfil
   ☐ Integração com sistema de pagamentos (ex: Stripe)
   ☐ Envio de e-mails de confirmação
   ☐ Calendário de aulas com visualização por dia/semana
   ☐ Notificações ou lembretes de aula
 
-7. Deploy:
-  ☐ Fazer deploy do frontend (Vercel, Netlify, etc)
-  ☐ Fazer deploy do backend (Render, Railway, etc)
-  ☐ Configurar domínio personalizado (opcional)
-  ☐ Usar variáveis de ambiente (.env) no deploy
-
-8. Testes e Otimizações:
+6. Testes e Otimizações:
   ☐ Testar navegação e funcionalidades principais
   ☐ Verificar compatibilidade em diferentes dispositivos
   ☐ Corrigir bugs e mensagens de erro
