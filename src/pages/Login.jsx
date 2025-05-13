@@ -1,8 +1,32 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/NavbarPublic";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
+import { supabase } from '../supabase/supabaseClient';
 
 function Login() {
+
+  const navigate = useNavigate();
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [errorMsg, setErrorMsg] = React.useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setErrorMsg('');
+
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password
+    });
+
+    if (error) {
+      setErrorMsg(error.message);
+    } else {
+      navigate('/dashboard');
+    }
+  }
+
   return (
     <>
       <Navbar />
@@ -20,12 +44,14 @@ function Login() {
           {/* Formulário à direita */}
           <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
             <h2 className="text-3xl font-bold text-blue-600 mb-8 text-center">Login</h2>
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleLogin}>
               <div>
                 <label className="block text-gray-700">Email</label>
                 <input
                   type="email"
                   name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                   className="mt-1 w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
@@ -35,6 +61,8 @@ function Login() {
                 <input
                   type="password"
                   name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   required
                   className="mt-1 w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
@@ -47,6 +75,7 @@ function Login() {
               </button>
               <p className="text-center">Ainda não tem conta? <a className="text-blue-500" href="/register" >Crie uma!</a></p>
             </form>
+            {errorMsg && <p className="text-red-600">{errorMsg}</p>}
           </div>
         </div>
       </div>

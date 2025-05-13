@@ -1,12 +1,11 @@
 import React from 'react';
 import { motion } from "framer-motion";
-import Navbar from '../components/Navbar';
+import Navbar from '../components/NavbarPublic';
 import Footer from '../components/Footer';
 
 function HomePage() {
   return (
     <div>
-      <Navbar />
       <div className="relative h-[500px] w-full overflow-hidden">
   {/* Imagem de fundo */}
   <img

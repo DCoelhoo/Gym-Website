@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/NavbarPublic';
 import Footer from '../components/Footer';
 import { useState } from 'react';
 import { supabase } from '../supabase/supabaseClient';
