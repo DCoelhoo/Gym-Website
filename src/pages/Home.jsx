@@ -92,8 +92,6 @@ function HomePage() {
           Inscreva-se Já
         </a>
       </section>
-
-      <Footer />
     </div>
   );
 }
