@@ -29,7 +29,6 @@ function Register() {
 
   return (
     <>
-      <Navbar />
       <div className="flex min-h-[90vh] items-center justify-center bg-gray-100">
         <div className="flex h-[80vh] w-full max-w-7xl overflow-hidden rounded-lg bg-white shadow">
           {/* Imagem à esquerda */}
@@ -115,7 +114,6 @@ function Register() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

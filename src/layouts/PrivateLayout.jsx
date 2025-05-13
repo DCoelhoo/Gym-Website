@@ -23,6 +23,7 @@ function PrivateLayout() {
       <main className=" bg-white min-h-screen">
         <Outlet />
       </main>
+      <Footer />
     </>
   );
 }
