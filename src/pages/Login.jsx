@@ -29,7 +29,6 @@ function Login() {
 
   return (
     <>
-      <Navbar />
       <div className="flex items-center justify-center min-h-[90vh] bg-gray-100">
         <div className="flex w-full max-w-7xl h-[80vh] bg-white rounded-lg shadow overflow-hidden">
           {/* Imagem à esquerda */}
@@ -79,7 +78,6 @@ function Login() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

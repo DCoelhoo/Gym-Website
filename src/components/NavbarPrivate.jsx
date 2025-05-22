@@ -45,7 +45,7 @@ function NavbarPrivate() {
               to="/"
               className="text-white transition-colors duration-200 hover:text-gray-300"
             >
-              Hello, User
+              Logout
             </Link>
           </li>
         </ul>
