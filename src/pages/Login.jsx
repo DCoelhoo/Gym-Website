@@ -29,7 +29,7 @@ function Login() {
 
   return (
     <>
-      <div className="flex items-center justify-center min-h-[90vh] bg-gray-100">
+      <div className="flex items-center justify-center min-h-[90vh] bg-gray-100 ">
         <div className="flex w-full max-w-7xl h-[80vh] bg-white rounded-lg shadow overflow-hidden">
           {/* Imagem à esquerda */}
           <div className="w-1/2 h-full hidden md:block">
@@ -68,7 +68,7 @@ function Login() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition"
+                className="w-full bg-blue-600 cursor-pointer text-white py-3 rounded hover:bg-blue-700 transition"
               >
                 Login
               </button>

@@ -11,6 +11,17 @@
   ✔ Criar o layout principal (Header, Footer, Navbar) @done(25-05-04 13:15)
   ✔ Implementar página Home @started(25-05-02 12:12) @done(25-05-04 13:15) @lasted(2d1h3m44s)
   
+  Design das Páginas:
+    ✔ Login / Registo @done(25-05-04 14:11)
+    ☐ Dashboard
+    ☐ TrainingPlans
+    ☐ Nutrição
+    ☐ Perfil de utilizador 
+    ☐ Lista de aulas / agendamentos 
+    ☐ Dashboard do funcionário/admin (ex: criar aulas, ver membros) 
+    ☐ Estilizar com Tailwind CSS ou outra biblioteca (Bootstrap, etc) 
+    ☐ Responsividade (funcionar bem em mobile)
+
   Criar páginas:
     ✔ Login / Registo @done(25-05-04 14:11)
     ☐ Perfil de utilizador
@@ -42,15 +53,4 @@
   ☐ Criar tabela de Ginásios
   
 
-5. Funcionalidades Extra:
-  ☐ Upload de imagem de perfil
-  ☐ Integração com sistema de pagamentos (ex: Stripe)
-  ☐ Envio de e-mails de confirmação
-  ☐ Calendário de aulas com visualização por dia/semana
-  ☐ Notificações ou lembretes de aula
 
-6. Testes e Otimizações:
-  ☐ Testar navegação e funcionalidades principais
-  ☐ Verificar compatibilidade em diferentes dispositivos
-  ☐ Corrigir bugs e mensagens de erro
-  ☐ Otimizar performance e imagens

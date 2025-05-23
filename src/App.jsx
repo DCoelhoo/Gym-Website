@@ -5,9 +5,12 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
+import Lessons from "./pages/Lessons";
+import Nutricion from "./pages/Nutrition";
 
-import PublicLayout from './layouts/PublicLayout';
+import PublicLayout from './layouts/publicLayout';
 import PrivateLayout from './layouts/PrivateLayout';
+import TrainingPlans from "./pages/TrainingPlans";
 
 const App = () => {
   return (
@@ -22,7 +25,10 @@ const App = () => {
 
         <Route element={<PrivateLayout />}>  {/* Layout privado */}
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/lessons" element={<Lessons />} />
+          <Route path="/nutricion" element={<Nutricion />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/training-plans" element={<TrainingPlans />} />
         </Route>
       </Routes>
     </Router>

@@ -14,35 +14,36 @@ function NavbarPrivate() {
     <nav className="bg-blue-500 text-white shadow-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
         <div className="text-2xl font-bold tracking-wide">
-          <Link to="/" className="text-white transition-colors duration-200 hover:text-gray-300">
+          <Link to="/dashboard" className="text-white transition-colors duration-200 hover:text-gray-300">
             Área de Cliente
           </Link>
         </div>
         <ul className="flex space-x-6">
           <li>
-            <Link to="/" className="text-white transition-colors duration-200 hover:text-gray-300">
-              Aulas
+            <Link to="/lessons" className="text-white transition-colors duration-200 hover:text-gray-300">
+              Lessons
             </Link>
           </li>
           <li>
             <Link
-              to="/"
+              to="/trainging-plans"
               className="text-white transition-colors duration-200 hover:text-gray-300"
             >
-              Planos de Treino
+              Training Plans
             </Link>
           </li>
           <li>
             <Link
-              to="/contact"
+              to="/nutrition"
               className="text-white transition-colors duration-200 hover:text-gray-300"
             >
-              Nutrição
+              Nutrition
             </Link>
           </li>
           <li>
             <Link
-              to="/"
+              onClick={logout}
+              to={"/"}
               className="text-white transition-colors duration-200 hover:text-gray-300"
             >
               Logout
