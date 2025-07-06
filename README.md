@@ -22,7 +22,7 @@ It includes both public and private pages, authentication, dynamic nutrition and
 
 ## Live Demo
 
-[![Custom thumbnail](./public/thumb.jpg)](https://www.loom.com/share/1fbcb7753bd443258a2495fa030528a8)
+[![Custom thumbnail](./public/thumb.jpg)](https://www.loom.com/share/18b51453b07b415382ec2d2e558b4246?sid=20502816-42c8-411d-9d30-f6f05a1b40ce)
 
 
 
