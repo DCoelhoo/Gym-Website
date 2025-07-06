@@ -1,12 +1,21 @@
-# React + Vite
+# Gym Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A complete gym management web application with both public and private pages, user role-based access control, full CRUD functionality for users and classes, and dynamic nutrition and workout plans powered by external APIs.
 
-Currently, two official plugins are available:
+## 🚀 Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+(Coming soon)
 
-## Expanding the ESLint configuration
+## 📦 Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React  
+- TailwindCSS  
+- Supabase  
+
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+npm install
+npm run dev
