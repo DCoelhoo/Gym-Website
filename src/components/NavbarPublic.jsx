@@ -4,16 +4,16 @@ import '../styles/styles.css';
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-blue-500 text-white shadow-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 mb-4  bg-blue-500 text-white shadow-md">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <div className="text-2xl font-bold tracking-wide">
           <Link to="/" className="text-white transition-colors duration-200 hover:text-gray-300">
-            GymFlex
+            GymX
           </Link>
         </div>
         <ul className="flex space-x-6">
           <li>
-            <Link to="/" className="text-white transition-colors duration-200 hover:text-gray-300">
+            <Link to="/gymsloc" className="text-white transition-colors duration-200 hover:text-gray-300">
               Gyms By City
             </Link>
           </li>

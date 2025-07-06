@@ -5,33 +5,37 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from '../supabase/supabaseClient';
 
 function Login() {
-
   const navigate = useNavigate();
+
+  // Form state
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [errorMsg, setErrorMsg] = React.useState("");
 
+  // Handle form submission
   const handleLogin = async (e) => {
     e.preventDefault();
     setErrorMsg('');
 
+    // Attempt to sign in using Supabase
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password
     });
 
     if (error) {
-      setErrorMsg(error.message);
+      setErrorMsg(error.message); // Show error message
     } else {
-      navigate('/dashboard');
+      navigate('/dashboard'); // Redirect on success
     }
-  }
+  };
 
   return (
     <>
       <div className="flex items-center justify-center min-h-[90vh] bg-gray-100">
         <div className="flex w-full max-w-7xl h-[80vh] bg-white rounded-lg shadow overflow-hidden">
-          {/* Imagem à esquerda */}
+          
+          {/* Left-side image (hidden on small screens) */}
           <div className="w-1/2 h-full hidden md:block">
             <img
               src="/form.jpg"
@@ -40,10 +44,12 @@ function Login() {
             />
           </div>
 
-          {/* Formulário à direita */}
+          {/* Login form on the right */}
           <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
             <h2 className="text-3xl font-bold text-blue-600 mb-8 text-center">Login</h2>
             <form className="space-y-6" onSubmit={handleLogin}>
+              
+              {/* Email field */}
               <div>
                 <label className="block text-gray-700">Email</label>
                 <input
@@ -55,6 +61,8 @@ function Login() {
                   className="mt-1 w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
+
+              {/* Password field */}
               <div>
                 <label className="block text-gray-700">Password</label>
                 <input
@@ -66,15 +74,26 @@ function Login() {
                   className="mt-1 w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
+
+              {/* Submit button */}
               <button
                 type="submit"
                 className="w-full bg-blue-600 cursor-pointer text-white py-3 rounded hover:bg-blue-700 transition"
               >
-                Login
+                Log In
               </button>
-              <p className="text-center">Ainda não tem conta? <a className="text-blue-500" href="/register" >Crie uma!</a></p>
+
+              {/* Link to registration */}
+              <p className="text-center">
+                Don't have an account?{" "}
+                <a className="text-blue-500" href="/register">
+                  Create one!
+                </a>
+              </p>
             </form>
-            {errorMsg && <p className="text-red-600">{errorMsg}</p>}
+
+            {/* Error message */}
+            {errorMsg && <p className="text-red-600 mt-4 text-center">{errorMsg}</p>}
           </div>
         </div>
       </div>

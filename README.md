@@ -1,39 +1,52 @@
 ![React](https://img.shields.io/badge/React-18.2-blue)
-![Supabase](https://img.shields.io/badge/Supabase-backend-green)
+![Supabase](https://img.shields.io/badge/Supabase-Backend-green)
+![Tailwind](https://img.shields.io/badge/TailwindCSS-Styling-blueviolet)
 
 # Gym Website
 
-A complete gym management web application with both public and private pages, user role-based access control, full CRUD functionality for users and classes, and dynamic nutrition and workout plans powered by external APIs.
+A modern web app for gym management built with **React**, **Supabase**, and **TailwindCSS**.  
+It includes both public and private pages, authentication, dynamic nutrition and workout plans, and a clean responsive UI.
 
-## Demo
+---
 
-(Coming soon)
+## Features
 
-## Technologies Used
+- **Role-based access**: Separate dashboards for staff and clients
+- **Class registration system** with real-time updates
+- **Dynamic workout plans** using muscle group filters
+- **Nutrition planner** powered by Spoonacular API
+- **Private/public route protection**
+- **Auth integration** with Supabase
 
-- React  
-- TailwindCSS  
-- Supabase  
+---
+
+## Live Demo
+
+[![Watch the demo](https://cdn.loom.com/sessions/thumbnails/18b51453b07b415382ec2d2e558b4246-with-play.png)](https://www.loom.com/share/18b51453b07b415382ec2d2e558b4246)
+
+
+---
+
+## Tech Stack
+
+| Frontend | Backend  | Styling      | APIs                   |
+|----------|----------|--------------|------------------------|
+| React    | Supabase | TailwindCSS  | Spoonacular, Ninja API |
+
+---
 
 ## Installation
 
+Clone the repo and run locally:
+
 ```bash
 git clone https://github.com/DCoelhoo/Gym-Website.git
-cd your-repo
+cd Gym-Website
 npm install
 npm run dev
 ```
 
-## User Roles
-
-- **Staff**: Full access to user and class management.
-- **Client**: Can view and manage their own classes.
-
-## Test Users
-
-- Staff: testeadmin@gmail.com / 123456
-- Client: teste@gmail.com / 123456
-
 ## Roadmap
 
 - Check TODO file
+

@@ -7,6 +7,7 @@ function TrainingPlans() {
   const [difficulty, setDifficulty] = useState('');
   const difficulties = ['beginner', 'intermediate', 'expert'];
 
+  // Fetch exercises from API whenever a new muscle is selected
   useEffect(() => {
     const fetchExercises = async () => {
       if (!selectedMuscle) return;
@@ -16,7 +17,7 @@ function TrainingPlans() {
           `https://api.api-ninjas.com/v1/exercises?muscle=${selectedMuscle}`,
           {
             headers: {
-              'X-Api-Key': 'H5G5yark1yOSXKCPr/QN1w==8lSFSzSAMejHUq3c',
+              'X-Api-Key': 'H5G5yark1yOSXKCPr/QN1w==8lSFSzSAMejHUq3c', // Use env variable in production
             },
           }
         );
@@ -25,28 +26,29 @@ function TrainingPlans() {
           const data = await response.json();
           setExercises(data);
         } else {
-          console.error('Erro ao buscar exercícios');
-          setExercises([]); // Limpa lista em caso de erro
+          console.error('Failed to fetch exercises');
+          setExercises([]);
         }
       } catch (error) {
-        console.error('Erro ao buscar dados da API', error);
+        console.error('API error:', error);
       }
     };
 
     fetchExercises();
   }, [selectedMuscle]);
 
-  // Aplica o filtro por dificuldade
+  // Filter exercises by selected difficulty
   const filteredExercises = exercises.filter((exercise) =>
     difficulty ? exercise.difficulty === difficulty : true
   );
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-6">Planos de Treino</h1>
+      <h1 className="text-3xl font-bold text-center mb-6">Workout Plans</h1>
 
-      {/* Filtros */}
+      {/* Filters */}
       <div className="flex flex-col md:flex-row gap-4 mb-6">
+        {/* Muscle selection */}
         <div className="flex-1">
           <MuscleSelector
             selectedMuscle={selectedMuscle}
@@ -54,16 +56,17 @@ function TrainingPlans() {
           />
         </div>
 
-        <div className="flex-1">
-          <label className="block font-semibold mb-1">Dificuldade:</label>
+        {/* Difficulty selection */}
+        <div className="flex-1 ">
+          <label className="block font-semibold mb-1">Difficulty:</label>
           <select
-            className="w-full border rounded px-3 py-2"
+            className="w-full border rounded px-3 py-2 cursor-pointer"
             value={difficulty}
             onChange={(e) => setDifficulty(e.target.value)}
           >
-            <option value="">Todas</option>
+            <option value="">All</option>
             {difficulties.map((level) => (
-              <option key={level} value={level}>
+              <option key={level} value={level} className='cursor-pointer'>
                 {level.charAt(0).toUpperCase() + level.slice(1)}
               </option>
             ))}
@@ -71,7 +74,7 @@ function TrainingPlans() {
         </div>
       </div>
 
-      {/* Lista de exercícios */}
+      {/* Exercise List */}
       <div className="space-y-4">
         {filteredExercises.length > 0 ? (
           filteredExercises.map((exercise, index) => (
@@ -94,7 +97,7 @@ function TrainingPlans() {
           ))
         ) : (
           <p className="text-center text-gray-500 mt-10">
-            Nenhum exercício encontrado.
+            No exercises found.
           </p>
         )}
       </div>

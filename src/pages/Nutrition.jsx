@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
-const API_KEY = '9766b01e426342478df4c7bab9e876d3';
+const API_KEY = '9766b01e426342478df4c7bab9e876d3'; // Replace with env variable in production
 
 export default function Nutrition() {
   const [mealPlan, setMealPlan] = useState(null);
-  const [openDay, setOpenDay] = useState(null);
+  const [openDay, setOpenDay] = useState(null); // Track which day is expanded
 
+  // Fetch weekly meal plan from Spoonacular API
   useEffect(() => {
     async function fetchPlan() {
       const res = await fetch(
@@ -19,20 +20,24 @@ export default function Nutrition() {
     fetchPlan();
   }, []);
 
-  if (!mealPlan) return <p className="mt-8 text-center">A carregar plano nutricional...</p>;
+  if (!mealPlan) {
+    return <p className="mt-8 text-center">Loading nutritional plan...</p>;
+  }
 
   return (
     <div className="container mx-auto max-w-4xl px-4 py-8">
-      <h1 className="mb-6 text-center text-3xl font-bold">Plano Nutricional da Semana</h1>
+      <h1 className="mb-6 text-center text-3xl font-bold">Weekly Nutrition Plan</h1>
 
       <div className="space-y-4">
         {Object.entries(mealPlan).map(([day, info]) => {
           const isOpen = openDay === day;
+
           return (
             <div
               key={day}
               className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm transition-all"
             >
+              {/* Toggle button for each day */}
               <button
                 onClick={() => setOpenDay(isOpen ? null : day)}
                 className="flex w-full cursor-pointer items-center justify-between bg-gray-50 px-6 py-4 text-left transition hover:bg-gray-100"
@@ -40,7 +45,7 @@ export default function Nutrition() {
                 <div>
                   <h2 className="text-xl font-semibold capitalize">{day}</h2>
                   <p className="text-sm text-gray-600">
-                    {info.meals.length} refeições – {Math.round(info.nutrients.calories)} kcal
+                    {info.meals.length} meals – {Math.round(info.nutrients.calories)} kcal
                   </p>
                 </div>
                 <ChevronDown
@@ -50,6 +55,7 @@ export default function Nutrition() {
                 />
               </button>
 
+              {/* Meal list shown when day is expanded */}
               {isOpen && (
                 <div className="border-t bg-white px-6 py-4">
                   <ul className="space-y-2">
@@ -70,9 +76,9 @@ export default function Nutrition() {
                     ))}
                   </ul>
                   <p className="mt-4 text-sm text-gray-500">
-                    <strong>Totais:</strong> {Math.round(info.nutrients.calories)} kcal,{' '}
-                    {info.nutrients.protein}g proteína, {info.nutrients.carbohydrates}g carbs,{' '}
-                    {info.nutrients.fat}g gordura
+                    <strong>Totals:</strong> {Math.round(info.nutrients.calories)} kcal,{' '}
+                    {info.nutrients.protein}g protein, {info.nutrients.carbohydrates}g carbs,{' '}
+                    {info.nutrients.fat}g fat
                   </p>
                 </div>
               )}

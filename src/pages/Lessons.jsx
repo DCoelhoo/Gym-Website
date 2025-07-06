@@ -17,6 +17,7 @@ export default function Lessons() {
     start_time: '',
   });
 
+  // Fetch lessons from Supabase on load
   useEffect(() => {
     fetchLessons();
   }, []);
@@ -24,15 +25,16 @@ export default function Lessons() {
   async function fetchLessons() {
     const { data, error } = await supabase.from('Classes').select('*');
     if (error) {
-      console.error('Erro ao buscar aulas:', error);
+      console.error('Error fetching lessons:', error);
       return;
     }
 
+    // Format events for calendar
     const formattedEvents = data.map(cls => ({
       id: cls.id,
       title: cls.title || 'Lesson',
       start: new Date(cls.start_time),
-      end: new Date(new Date(cls.start_time).getTime() + 60 * 60 * 1000),
+      end: new Date(new Date(cls.start_time).getTime() + 60 * 60 * 1000), // 1-hour duration
       description: cls.description,
       instructor: cls.instructor,
     }));
@@ -40,20 +42,21 @@ export default function Lessons() {
     setEvents(formattedEvents);
   }
 
+  // Handle form submission to create a new lesson
   async function handleSubmit(e) {
     e.preventDefault();
     const { title, description, instructor, start_time } = formData;
 
-    const { data, error } = await supabase.from('Classes').insert([
-      { title, description, instructor, start_time }
-    ]);
+    const { data, error } = await supabase
+      .from('Classes')
+      .insert([{ title, description, instructor, start_time }]);
 
     if (error) {
-      console.error('Erro ao criar aula:', error);
+      console.error('Error creating lesson:', error);
       return;
     }
 
-    // Recarrega as aulas depois de criar
+    // Refresh lessons after creation
     fetchLessons();
     setFormData({ title: '', description: '', instructor: '', start_time: '' });
     setShowForm(false);
@@ -63,18 +66,23 @@ export default function Lessons() {
     <div className="flex min-h-screen flex-col items-center bg-gray-100 p-4">
       <h1 className="mb-4 text-4xl font-bold">Lessons</h1>
 
+      {/* Toggle form visibility */}
       <button
         onClick={() => setShowForm(!showForm)}
-        className="mb-4 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-700 cursor-pointer"
+        className="mb-4 cursor-pointer rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-700"
       >
-        {showForm ? 'Cancelar' : 'Criar nova lição'}
+        {showForm ? 'Cancel' : 'Create New Lesson'}
       </button>
 
+      {/* Lesson creation form */}
       {showForm && (
-        <form onSubmit={handleSubmit} className="mb-4 w-full max-w-2xl space-y-4 rounded bg-white p-6 shadow">
+        <form
+          onSubmit={handleSubmit}
+          className="mb-4 w-full max-w-2xl space-y-4 rounded bg-white p-6 shadow"
+        >
           <input
             type="text"
-            placeholder="Título"
+            placeholder="Title"
             value={formData.title}
             onChange={e => setFormData({ ...formData, title: e.target.value })}
             className="w-full rounded border p-2"
@@ -82,14 +90,14 @@ export default function Lessons() {
           />
           <input
             type="text"
-            placeholder="Descrição"
+            placeholder="Description"
             value={formData.description}
             onChange={e => setFormData({ ...formData, description: e.target.value })}
             className="w-full rounded border p-2"
           />
           <input
             type="text"
-            placeholder="Instrutor"
+            placeholder="Instructor"
             value={formData.instructor}
             onChange={e => setFormData({ ...formData, instructor: e.target.value })}
             className="w-full rounded border p-2"
@@ -106,11 +114,12 @@ export default function Lessons() {
             type="submit"
             className="rounded bg-green-600 px-4 py-2 text-white hover:bg-green-700"
           >
-            Criar Lição
+            Create Lesson
           </button>
         </form>
       )}
 
+      {/* Calendar showing all lessons */}
       <div className="w-full max-w-7xl rounded bg-white p-4 shadow">
         <Calendar
           localizer={localizer}
@@ -119,6 +128,7 @@ export default function Lessons() {
           endAccessor="end"
           defaultView="month"
           style={{ height: 800 }}
+          toolbar={false}
           components={{
             event: ({ event }) => (
               <div>
@@ -129,7 +139,7 @@ export default function Lessons() {
             ),
           }}
           onSelectEvent={event => {
-            if (confirm(`Queres-te inscrever na aula "${event.title}" com ${event.instructor}?`)) {
+            if (confirm(`Do you want to register for "${event.title}" with ${event.instructor}?`)) {
               registerToClass(event.id);
             }
           }}

@@ -1,10 +1,13 @@
 import React from 'react';
 
+// Contact/About page for GymX
 function Contact() {
   return (
     <div className="container mx-auto max-w-4xl px-4 py-12">
-      <h1 className="mb-10 text-center text-4xl font-bold">Sobre o Ginásio</h1>
+      {/* Page title */}
+      <h1 className="mb-10 text-center text-4xl font-bold">About the Gym</h1>
 
+      {/* About text section */}
       <div className="mb-12 space-y-6 leading-relaxed text-gray-700 text-justify">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend fringilla lectus
@@ -31,24 +34,27 @@ function Contact() {
         </p>
       </div>
 
-      <h2 className="mb-6 text-3xl font-semibold">Contactos</h2>
+      {/* Contact information */}
+      <h2 className="mb-6 text-3xl font-semibold">Contact Information</h2>
       <div className="mb-10 space-y-2 text-gray-800">
         <p>
-          <strong>Morada:</strong> Rua Exemplo nº123, Lisboa
+          <strong>Address:</strong> Example Street nº123, Lisbon
         </p>
         <p>
-          <strong>Telefone:</strong> +351 912 345 678
+          <strong>Phone:</strong> +351 912 345 678
         </p>
         <p>
           <strong>Email:</strong> geral@gymexample.com
         </p>
       </div>
 
-      <h2 className="mb-4 text-3xl font-semibold">Envia-nos uma mensagem</h2>
+      {/* Contact form */}
+      <h2 className="mb-4 text-3xl font-semibold">Send Us a Message</h2>
       <form className="space-y-4">
+        {/* Name field */}
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-            Nome
+            Name
           </label>
           <input
             type="text"
@@ -57,6 +63,8 @@ function Contact() {
             required
           />
         </div>
+
+        {/* Email field */}
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700">
             Email
@@ -68,22 +76,26 @@ function Contact() {
             required
           />
         </div>
+
+        {/* Message field */}
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-            Mensagem
+            Message
           </label>
           <textarea
             id="message"
-            rows="4"
+            rows={4}
             className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             required
           ></textarea>
         </div>
+
+        {/* Submit button */}
         <button
           type="submit"
           className="rounded-md bg-blue-600 px-6 py-2 text-white transition-colors hover:bg-blue-700"
         >
-          Enviar Mensagem
+          Send Message
         </button>
       </form>
     </div>
