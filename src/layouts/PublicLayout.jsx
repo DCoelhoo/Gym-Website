@@ -8,7 +8,7 @@ function PublicLayout() {
   return (
     <>
       <NavbarPublic />
-      <main className=" bg-gray-100 min-h-screen">
+      <main className="container mx-auto px-4 py-6 bg-white min-h-screen">
         <Outlet />
       </main>
         <Footer />

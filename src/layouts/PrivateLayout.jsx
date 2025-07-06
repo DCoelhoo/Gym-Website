@@ -21,7 +21,7 @@ function PrivateLayout() {
   return (
     <>
       <NavbarPrivate />
-      <main className=" bg-white min-h-screen">
+      <main className="container mx-auto px-4 py-6 bg-white min-h-screen">
         <Outlet />
       </main>
       <Footer />

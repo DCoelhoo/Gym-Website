@@ -12,7 +12,7 @@ function NavbarPrivate() {
 
   return (
     <nav className="bg-blue-500 text-white shadow-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+      <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <div className="text-2xl font-bold tracking-wide">
           <Link to="/dashboard" className="text-white transition-colors duration-200 hover:text-gray-300">
             Área de Cliente
@@ -26,7 +26,7 @@ function NavbarPrivate() {
           </li>
           <li>
             <Link
-              to="/trainging-plans"
+              to="/training-plans"
               className="text-white transition-colors duration-200 hover:text-gray-300"
             >
               Training Plans
