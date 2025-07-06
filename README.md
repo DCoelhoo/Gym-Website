@@ -22,7 +22,13 @@ It includes both public and private pages, authentication, dynamic nutrition and
 
 ## Live Demo
 
-[![Watch the demo](https://cdn.loom.com/sessions/thumbnails/18b51453b07b415382ec2d2e558b4246-with-play.png)](https://www.loom.com/share/18b51453b07b415382ec2d2e558b4246)
+## 🎥 Demo Video
+
+## 🎥 Demo Video
+
+[![Watch the demo](https://cdn.loom.com/sessions/thumbnails/1fbcb7753bd443258a2495fa030528a8-with-play.png)](https://www.loom.com/share/1fbcb7753bd443258a2495fa030528a8)
+
+
 
 
 ---
