@@ -1,6 +1,5 @@
 ![React](https://img.shields.io/badge/React-18.2-blue)
 ![Supabase](https://img.shields.io/badge/Supabase-backend-green)
-![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
 # Gym Website
 
